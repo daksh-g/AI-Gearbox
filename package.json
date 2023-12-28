@@ -2,10 +2,14 @@
   "name": "app",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun --watch src/index.js",
+    "build": "bun build src/index.js",
+    "start": "NODE_ENV=production bun src/index.js",
+    "test": "bun test"
   },
   "dependencies": {
+    "@elysiajs/html": "^0.8.0",
+    "@elysiajs/static": "^0.8.1",
     "elysia": "latest"
   },
   "devDependencies": {
