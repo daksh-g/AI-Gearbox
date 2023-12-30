@@ -1,4 +1,5 @@
 import { api } from "../setup.js";
+import urlCheck from "../lib/urlcheck.js";
 
 const bookAPI = async ({ params: { bookname } }) => {
 
@@ -7,7 +8,7 @@ const bookAPI = async ({ params: { bookname } }) => {
             method: 'GET',
             headers: {
                 'X-RapidAPI-Key': api.key,
-                'X-RapidAPI-Host': config.books.host
+                'X-RapidAPI-Host': api.hosts.book
             }
         })).json();
     } else {
@@ -15,17 +16,44 @@ const bookAPI = async ({ params: { bookname } }) => {
     }
 }
 
-const tldr = async ({ params: { text } }) => {
-    if(bookname) {
-        return await (await fetch(`https://getbooksinfo.p.rapidapi.com/?s=${bookname}`, {
-            method: 'GET',
+const tldrArticle = async ({ query: { url } }) => {
+    if(urlCheck(url)) {
+        return await (await fetch(`https://tldrthis.p.rapidapi.com/v1/model/abstractive/summarize-url/`, {
+            method: 'POST',
             headers: {
+                'content-type': 'application/json',
                 'X-RapidAPI-Key': api.key,
-                'X-RapidAPI-Host': config.books.host
+                'X-RapidAPI-Host': api.hosts.tldr
+            },
+            body: {
+                url,
+                min_length: 100,
+                max_length: 300,
+                is_detailed: false
             }
         })).json();
     } else {
-        return {"ERROR": "No bookname provided"};
+        return {"ERROR": "Invalid URL provided"};
+    }
+}
+
+const tldrText = async ({ query: { text } }) => {
+    if(!text) {
+        return await (await fetch(`https://tldrthis.p.rapidapi.com/v1/model/abstractive/summarize-text/`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'X-RapidAPI-Key': api.key,
+                'X-RapidAPI-Host': api.hosts.tldr
+            },
+            body: {
+                text,
+                min_length: 100,
+                max_length: 300,
+            }
+        })).json();
+    } else {
+        return {"ERROR": "Invalid URL provided"};
     }
 }
 
@@ -33,5 +61,7 @@ import { Elysia } from "elysia";
 
 export default new Elysia().group("/api", (app) => {
         app.get("/books/:bookname", bookAPI);
+        app.get("/tldr/url", tldrArticle);
+        app.get("/tldr/text", tldrText);
         return app;
-    })
+    });
