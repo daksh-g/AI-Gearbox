@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(180deg, #A1D8FF 36.98%, #67DEEE 50%, #58F29F 82.81%, #33E92F 100%);
+}
+
+#description {
+    margin: 25px;
+    display: flex;
+}
+
+#description p {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 156%;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+#input {
+    height: 50vh;
+    margin: 0 45px;
+    background: #599BFF;
+    border-radius: 10px;
+}
