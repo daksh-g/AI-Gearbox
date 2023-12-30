@@ -12,6 +12,8 @@ app.use(api);
 app.use(staticPlugin({ assets: "src/public", prefix: "/" }));
 app.use(html());
 app.get("/", Bun.file("src/pages/index.html"));
+app.get("/book-search", Bun.file("src/pages/book-search.html"));
+app.get("/tldr", Bun.file("src/pages/tldr.html"));
 
 app.listen(PORT);
 console.log(

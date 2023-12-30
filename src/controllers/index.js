@@ -1,4 +1,4 @@
-import * as config from "../setup.js";
+import { api } from "../setup.js";
 
 const bookAPI = async ({ params: { bookname } }) => {
 
@@ -6,7 +6,21 @@ const bookAPI = async ({ params: { bookname } }) => {
         return await (await fetch(`https://getbooksinfo.p.rapidapi.com/?s=${bookname}`, {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': config.books.key,
+                'X-RapidAPI-Key': api.key,
+                'X-RapidAPI-Host': config.books.host
+            }
+        })).json();
+    } else {
+        return {"ERROR": "No bookname provided"};
+    }
+}
+
+const tldr = async ({ params: { text } }) => {
+    if(bookname) {
+        return await (await fetch(`https://getbooksinfo.p.rapidapi.com/?s=${bookname}`, {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': api.key,
                 'X-RapidAPI-Host': config.books.host
             }
         })).json();
