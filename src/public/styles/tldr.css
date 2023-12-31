@@ -20,6 +20,37 @@ body {
 #input {
     height: 50vh;
     margin: 0 45px;
+    padding: 2rem;
     background: #599BFF;
     border-radius: 10px;
+}
+
+.search {
+    display: flex;
+    gap: 1rem;
+}
+
+.search input {
+    flex-grow: 1;
+    border-radius: 10px;
+    padding-left: 1rem;
+
+    font-family: 'Mitr';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 71%;
+    color: #000000;
+}
+
+.search img {
+    background-color: #F3A25C;
+    padding: 4px;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+}
+
+.search img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }

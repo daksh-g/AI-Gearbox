@@ -17,10 +17,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 40px;
 }
 
 #tiles div {
-    margin: 0px 1.25rem;
     padding: 5rem 0 5rem;
     
     width: 27vw;
@@ -70,5 +70,9 @@ body {
 }
 
 #tiles div:nth-of-type(2) p {
+    margin-top: 0.75rem;
+}
+
+#tiles div:nth-of-type(3) p {
     margin-top: 0.75rem;
 }
