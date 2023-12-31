@@ -17,16 +17,17 @@ const bookAPI = async ({ params: { bookname } }) => {
 }
 
 const tldrArticle = async ({ query: { url } }) => {
+    console.log(`"` + url + `"`);
     if(urlCheck(url)) {
         return await (await fetch(`https://tldrthis.p.rapidapi.com/v1/model/abstractive/summarize-url/`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'X-RapidAPI-Key': api.key,
+                'X-RapidAPI-Key':   api.key,
                 'X-RapidAPI-Host': api.hosts.tldr
             },
             body: {
-                url,
+                url: url,
                 min_length: 100,
                 max_length: 300,
                 is_detailed: false
@@ -38,7 +39,8 @@ const tldrArticle = async ({ query: { url } }) => {
 }
 
 const tldrText = async ({ query: { text } }) => {
-    if(!text) {
+    console.log(text);
+    if(text !== "") {
         return await (await fetch(`https://tldrthis.p.rapidapi.com/v1/model/abstractive/summarize-text/`, {
             method: 'POST',
             headers: {
@@ -50,10 +52,11 @@ const tldrText = async ({ query: { text } }) => {
                 text,
                 min_length: 100,
                 max_length: 300,
+                is_detailed: false
             }
         })).json();
     } else {
-        return {"ERROR": "Invalid URL provided"};
+        return {"ERROR": "Invalid Text Provided"};
     }
 }
 
