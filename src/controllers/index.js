@@ -4,7 +4,7 @@ import urlCheck from "../lib/urlcheck.js";
 const bookAPI = async ({ params: { bookname } }) => {
 
     if(bookname) {
-        return await (await fetch(`https://getbooksinfo.p.rapidapi.com/?s=${bookname}`, {
+        return await (await fetch(`https://book-finder1.p.rapidapi.com/api/search?title=${bookname}`, {
             method: 'GET',
             headers: {
                 'X-RapidAPI-Key': api.key,
