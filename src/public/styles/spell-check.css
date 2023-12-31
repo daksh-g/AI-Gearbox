@@ -17,9 +17,27 @@ body {
     color: #FFFFFF;
 }
 
-#input {
-    height: 50vh;
+#io {
+    min-height: 50vh;
     margin: 0 45px;
-    background: #57DBD3;
-    border-radius: 10px;
+    display: flex;
+}
+
+.input {
+    background-color: #704FCC;
+    flex-grow: 1;
+}
+
+.output {
+    background-color: #57DBAB;
+    flex-grow: 1;
+}
+
+#io p {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 77%;
+    color: #FFFFFF;
 }

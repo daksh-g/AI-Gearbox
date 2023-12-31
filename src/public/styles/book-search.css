@@ -18,7 +18,7 @@ body {
 }
 
 #input {
-    height: 40vh;
+    min-height: 40vh;
     margin: 0 45px;
     padding: 2rem;
     background: #FF6159;

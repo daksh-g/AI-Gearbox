@@ -18,7 +18,7 @@ body {
 }
 
 #input {
-    height: 50vh;
+    min-height: 50vh;
     margin: 0 45px;
     padding: 2rem;
     background: #599BFF;
@@ -53,4 +53,28 @@ body {
 .search img:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+p.summary {
+    margin: 2rem 0;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 125%;
+    color: #FFFFFF;
+}
+
+div.summary {
+    min-height: 15vh;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 156%;
+    color: #000000;    
 }
