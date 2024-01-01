@@ -1,15 +1,6 @@
-# Elysia with Bun runtime
+# AI-Gearbox
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+Utilizing rapidapi and its powers for various tasks in order to aid education today!
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
-
-Open http://localhost:3000/ with your browser to see the result.
+To get this project, simply run `git clone https://github.com/daksh-g/AI-Gearbox`, then run `cd AI-Gearbox` to navigate to its directory.
+To run, do `bun run dev` or `bun start`
