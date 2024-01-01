@@ -11,7 +11,8 @@ button.addEventListener("click", async () => {
             genres: result.categories[0], // A string with all the genres in the book
             pagesCount: result.page_count,
             title: result.title,
-            summary: result.summary
+            summary: result.summary,
+            image: result.published_works[0].cover_art_url
         };
 
         console.log(bookData);
