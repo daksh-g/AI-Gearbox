@@ -24,13 +24,15 @@ body {
 }
 
 .input {
+    width: 50%;
+    padding: 2rem 1rem;
     background-color: #704FCC;
-    flex-grow: 1;
 }
 
 .output {
+    width: 50%;
+    padding: 2rem 1rem;
     background-color: #57DBAB;
-    flex-grow: 1;
 }
 
 #io p {
@@ -40,4 +42,43 @@ body {
     font-size: 65px;
     line-height: 77%;
     color: #FFFFFF;
+}
+
+.input textarea, .output div {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    min-height: 30vh;
+    background-color: #FFFFFF;
+
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 156%;
+    color: #000000;    
+}
+
+.input {
+    position: relative;
+}
+
+.input .img-parent {
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+}
+
+.input img {
+    transform: translate(50%, -30%);
+    scale: 0.75;
+
+    background-color: #000000;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+}
+
+.input img:hover {
+    cursor: pointer;
+    transform: translate(50%, -30%) scale(1.05);
 }
