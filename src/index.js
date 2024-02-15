@@ -18,5 +18,5 @@ app.get("/spell-check", Bun.file("src/pages/spell-check.html"));
 
 app.listen(PORT);
 console.log(
-  `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
+  `Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
 );
