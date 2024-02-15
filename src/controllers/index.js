@@ -13,7 +13,7 @@ const bookAPI = async ({ query: { bookname } }) => {
             }
         })).json();
     } else {
-        return {"ERROR": "No bookname provided"};
+        return {"ERROR": "No bookname is provided"};
     }
 }
 
